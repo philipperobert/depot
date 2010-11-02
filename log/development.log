@@ -1304,3 +1304,844 @@ Rendering template within layouts/store
 Rendering store/index
   [4;35;1mProduct Columns (0.012000)[0m   [0mSHOW FIELDS FROM `products`[0m
 Completed in 0.03200 (31 reqs/sec) | Rendering: 0.00700 (21%) | DB: 0.01500 (46%) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-11-02 04:32:58) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmRjMzE2ODEyYmU5MGEwYTgzMzFhNWNiYjExMTU5%0AYjkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--68e18af52f7a5480b788644025a8f74df41c2e78
+  Parameters: {"action"=>"index", "controller"=>"store"}
+  [4;36;1mProduct Load (0.002000)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+ERROR: compiling _run_erb_47app47views47store47index46html46erb RAISED compile error
+C:/INSTAN~1.0-W/rails_apps/depot/app/views/store/index.html.erb:8: syntax error, unexpected '=', expecting ')'
+_erbout.concat "    <span class=\"price\" >"; _erbout.concat(( number_to_currency(product.price, :precision = 2) ).to_s); _erbout.concat "</span>\n"
+                                                                                                             ^
+C:/INSTAN~1.0-W/rails_apps/depot/app/views/store/index.html.erb:8: syntax error, unexpected ')', expecting kEND
+_erbout.concat "    <span class=\"price\" >"; _erbout.concat(( number_to_currency(product.price, :precision = 2) ).to_s); _erbout.concat "</span>\n"
+                                                                                                                        ^
+Function body: def _run_erb_47app47views47store47index46html46erb(local_assigns)
+_erbout = ''; _erbout.concat "<h1>Your Pragmatic Catalog</h1>\n"
+ for product in @products 
+_erbout.concat "  <div class=\"entry\">\n"
+_erbout.concat "    "; _erbout.concat(( image_tag(product.image_url) ).to_s); _erbout.concat "\n"
+_erbout.concat "    <h3>"; _erbout.concat((h product.title ).to_s); _erbout.concat "</h3>\n"
+_erbout.concat "    "; _erbout.concat(( product.description ).to_s); _erbout.concat "\n"
+_erbout.concat "    \n"
+_erbout.concat "    <span class=\"price\" >"; _erbout.concat(( number_to_currency(product.price, :precision = 2) ).to_s); _erbout.concat "</span>\n"
+_erbout.concat "\n"
+_erbout.concat "    "; _erbout.concat(( button_to "Add to Cart" , :action => :add_to_cart, :id => product ).to_s); _erbout.concat "\n"
+_erbout.concat "    \n"
+_erbout.concat "  </div>\n"
+ end ; _erbout.concat "\n"
+_erbout
+end
+Backtrace: C:/INSTAN~1.0-W/rails_apps/depot/app/views/store/index.html.erb:15:in `compile_template'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:630:in `compile_and_render_template'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:365:in `render_template'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:316:in `render_file'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1100:in `render_for_file'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:836:in `render_with_no_layout'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/layout.rb:262:in `render_without_benchmark'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+C:/INSTAN~1.0-W/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1153:in `default_render'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1159:in `perform_action_without_filters'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+C:/INSTAN~1.0-W/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/rails.rb:76:in `process'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/rails.rb:74:in `process'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:159:in `process_client'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:158:in `each'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:158:in `process_client'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:285:in `run'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:285:in `initialize'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:285:in `new'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:285:in `run'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:268:in `initialize'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:268:in `new'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:268:in `run'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/configurator.rb:282:in `run'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/configurator.rb:281:in `each'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/configurator.rb:281:in `run'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:128:in `run'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/command.rb:212:in `run'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:281
+C:/INSTAN~1.0-W/ruby/bin/mongrel_rails:19:in `load'
+C:/INSTAN~1.0-W/ruby/bin/mongrel_rails:19
+
+
+ActionView::TemplateError (compile error
+C:/INSTAN~1.0-W/rails_apps/depot/app/views/store/index.html.erb:8: syntax error, unexpected '=', expecting ')'
+_erbout.concat "    <span class=\"price\" >"; _erbout.concat(( number_to_currency(product.price, :precision = 2) ).to_s); _erbout.concat "</span>\n"
+                                                                                                             ^
+C:/INSTAN~1.0-W/rails_apps/depot/app/views/store/index.html.erb:8: syntax error, unexpected ')', expecting kEND
+_erbout.concat "    <span class=\"price\" >"; _erbout.concat(( number_to_currency(product.price, :precision = 2) ).to_s); _erbout.concat "</span>\n"
+                                                                                                                        ^) on line #8 of store/index.html.erb:
+5:     <h3><%=h product.title %></h3>
+6:     <%= product.description %>
+7:     
+8:     <span class="price" ><%= number_to_currency(product.price, :precision = 2) %></span>
+9: 
+10:     <%= button_to "Add to Cart" , :action => :add_to_cart, :id => product %>
+11:     
+
+    app/views/store/index.html.erb:15:in `compile_template'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:630:in `compile_and_render_template'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:365:in `render_template'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:316:in `render_file'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1100:in `render_for_file'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:836:in `render_with_no_layout'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/layout.rb:262:in `render_without_benchmark'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1153:in `default_render'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1159:in `perform_action_without_filters'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/rails.rb:76:in `process'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/rails.rb:74:in `synchronize'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/rails.rb:74:in `process'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:159:in `process_client'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:158:in `each'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:158:in `process_client'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `initialize'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `new'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `initialize'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `new'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:282:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:281:in `each'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:281:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:128:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/command.rb:212:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:281
+    C:/INSTAN~1.0-W/ruby/bin/mongrel_rails:19:in `load'
+    C:/INSTAN~1.0-W/ruby/bin/mongrel_rails:19
+
+Rendering C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-11-02 04:33:19) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmRjMzE2ODEyYmU5MGEwYTgzMzFhNWNiYjExMTU5%0AYjkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--68e18af52f7a5480b788644025a8f74df41c2e78
+  Parameters: {"action"=>"index", "controller"=>"store"}
+  [4;35;1mProduct Load (0.003000)[0m   [0mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;36;1mProduct Columns (0.010000)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+
+
+ActionView::TemplateError (undefined method `stringify_keys' for 2:Fixnum) on line #8 of store/index.html.erb:
+5:     <h3><%=h product.title %></h3>
+6:     <%= product.description %>
+7:     
+8:     <span class="price" ><%= number_to_currency(product.price, precision = 2) %></span>
+9: 
+10:     <%= button_to "Add to Cart" , :action => :add_to_cart, :id => product %>
+11:     
+
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/helpers/number_helper.rb:66:in `number_to_currency'
+    app/views/store/index.html.erb:8:in `_run_erb_47app47views47store47index46html46erb'
+    app/views/store/index.html.erb:2:in `each'
+    app/views/store/index.html.erb:2:in `_run_erb_47app47views47store47index46html46erb'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `send'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `compile_and_render_template'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:365:in `render_template'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:316:in `render_file'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1100:in `render_for_file'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:836:in `render_with_no_layout'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/layout.rb:262:in `render_without_benchmark'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1153:in `default_render'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1159:in `perform_action_without_filters'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/rails.rb:76:in `process'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/rails.rb:74:in `synchronize'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/rails.rb:74:in `process'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:159:in `process_client'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:158:in `each'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:158:in `process_client'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `initialize'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `new'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `initialize'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `new'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:282:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:281:in `each'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:281:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:128:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/command.rb:212:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:281
+    C:/INSTAN~1.0-W/ruby/bin/mongrel_rails:19:in `load'
+    C:/INSTAN~1.0-W/ruby/bin/mongrel_rails:19
+
+Rendering C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-11-02 04:33:39) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmRjMzE2ODEyYmU5MGEwYTgzMzFhNWNiYjExMTU5%0AYjkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--68e18af52f7a5480b788644025a8f74df41c2e78
+  Parameters: {"action"=>"index", "controller"=>"store"}
+  [4;35;1mProduct Load (0.001000)[0m   [0mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;36;1mProduct Columns (0.011000)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+
+
+ActionView::TemplateError (undefined local variable or method `precision' for #<ActionView::Base:0x56b08f0>) on line #8 of store/index.html.erb:
+5:     <h3><%=h product.title %></h3>
+6:     <%= product.description %>
+7:     
+8:     <span class="price" ><%= number_to_currency(product.price, precision ) %></span>
+9: 
+10:     <%= button_to "Add to Cart" , :action => :add_to_cart, :id => product %>
+11:     
+
+    app/views/store/index.html.erb:8:in `_run_erb_47app47views47store47index46html46erb'
+    app/views/store/index.html.erb:2:in `each'
+    app/views/store/index.html.erb:2:in `_run_erb_47app47views47store47index46html46erb'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `send'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `compile_and_render_template'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:365:in `render_template'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:316:in `render_file'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1100:in `render_for_file'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:836:in `render_with_no_layout'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/layout.rb:262:in `render_without_benchmark'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1153:in `default_render'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1159:in `perform_action_without_filters'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/rails.rb:76:in `process'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/rails.rb:74:in `synchronize'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/rails.rb:74:in `process'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:159:in `process_client'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:158:in `each'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:158:in `process_client'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `initialize'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `new'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `initialize'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `new'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:282:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:281:in `each'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:281:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:128:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/command.rb:212:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:281
+    C:/INSTAN~1.0-W/ruby/bin/mongrel_rails:19:in `load'
+    C:/INSTAN~1.0-W/ruby/bin/mongrel_rails:19
+
+Rendering C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-11-02 04:33:47) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmRjMzE2ODEyYmU5MGEwYTgzMzFhNWNiYjExMTU5%0AYjkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--68e18af52f7a5480b788644025a8f74df41c2e78
+  Parameters: {"action"=>"index", "controller"=>"store"}
+  [4;35;1mProduct Load (0.002000)[0m   [0mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;36;1mProduct Columns (0.011000)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+Completed in 0.03300 (30 reqs/sec) | Rendering: 0.00900 (27%) | DB: 0.02400 (72%) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-11-02 04:35:42) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmRjMzE2ODEyYmU5MGEwYTgzMzFhNWNiYjExMTU5%0AYjkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--68e18af52f7a5480b788644025a8f74df41c2e78
+  Parameters: {"action"=>"index", "controller"=>"store"}
+  [4;35;1mProduct Load (0.002000)[0m   [0mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+ERROR: compiling _run_erb_47app47views47store47index46html46erb RAISED compile error
+C:/INSTAN~1.0-W/rails_apps/depot/app/views/store/index.html.erb:8: syntax error, unexpected ','
+_erbout.concat "    <span class=\"price\" >"; _erbout.concat(( number_to_currency(product.price, , {precision: 2}) ).to_s); _erbout.concat "</span>\n"
+                                                                                                  ^
+C:/INSTAN~1.0-W/rails_apps/depot/app/views/store/index.html.erb:8: odd number list for Hash
+_erbout.concat "    <span class=\"price\" >"; _erbout.concat(( number_to_currency(product.price, , {precision: 2}) ).to_s); _erbout.concat "</span>\n"
+                                                                                                              ^
+Function body: def _run_erb_47app47views47store47index46html46erb(local_assigns)
+_erbout = ''; _erbout.concat "<h1>Your Pragmatic Catalog</h1>\n"
+ for product in @products 
+_erbout.concat "  <div class=\"entry\">\n"
+_erbout.concat "    "; _erbout.concat(( image_tag(product.image_url) ).to_s); _erbout.concat "\n"
+_erbout.concat "    <h3>"; _erbout.concat((h product.title ).to_s); _erbout.concat "</h3>\n"
+_erbout.concat "    "; _erbout.concat(( product.description ).to_s); _erbout.concat "\n"
+_erbout.concat "    \n"
+_erbout.concat "    <span class=\"price\" >"; _erbout.concat(( number_to_currency(product.price, , {precision: 2}) ).to_s); _erbout.concat "</span>\n"
+_erbout.concat "\n"
+_erbout.concat "    "; _erbout.concat(( button_to "Add to Cart" , :action => :add_to_cart, :id => product ).to_s); _erbout.concat "\n"
+_erbout.concat "    \n"
+_erbout.concat "  </div>\n"
+ end ; _erbout.concat "\n"
+_erbout
+end
+Backtrace: C:/INSTAN~1.0-W/rails_apps/depot/app/views/store/index.html.erb:15:in `compile_template'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:630:in `compile_and_render_template'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:365:in `render_template'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:316:in `render_file'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1100:in `render_for_file'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:836:in `render_with_no_layout'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/layout.rb:262:in `render_without_benchmark'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+C:/INSTAN~1.0-W/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1153:in `default_render'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1159:in `perform_action_without_filters'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+C:/INSTAN~1.0-W/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/rails.rb:76:in `process'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/rails.rb:74:in `process'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:159:in `process_client'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:158:in `each'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:158:in `process_client'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:285:in `run'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:285:in `initialize'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:285:in `new'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:285:in `run'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:268:in `initialize'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:268:in `new'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:268:in `run'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/configurator.rb:282:in `run'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/configurator.rb:281:in `each'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/configurator.rb:281:in `run'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:128:in `run'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/command.rb:212:in `run'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:281
+C:/INSTAN~1.0-W/ruby/bin/mongrel_rails:19:in `load'
+C:/INSTAN~1.0-W/ruby/bin/mongrel_rails:19
+
+
+ActionView::TemplateError (compile error
+C:/INSTAN~1.0-W/rails_apps/depot/app/views/store/index.html.erb:8: syntax error, unexpected ','
+_erbout.concat "    <span class=\"price\" >"; _erbout.concat(( number_to_currency(product.price, , {precision: 2}) ).to_s); _erbout.concat "</span>\n"
+                                                                                                  ^
+C:/INSTAN~1.0-W/rails_apps/depot/app/views/store/index.html.erb:8: odd number list for Hash
+_erbout.concat "    <span class=\"price\" >"; _erbout.concat(( number_to_currency(product.price, , {precision: 2}) ).to_s); _erbout.concat "</span>\n"
+                                                                                                              ^) on line #8 of store/index.html.erb:
+5:     <h3><%=h product.title %></h3>
+6:     <%= product.description %>
+7:     
+8:     <span class="price" ><%= number_to_currency(product.price, , {precision: 2}) %></span>
+9: 
+10:     <%= button_to "Add to Cart" , :action => :add_to_cart, :id => product %>
+11:     
+
+    app/views/store/index.html.erb:15:in `compile_template'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:630:in `compile_and_render_template'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:365:in `render_template'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:316:in `render_file'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1100:in `render_for_file'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:836:in `render_with_no_layout'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/layout.rb:262:in `render_without_benchmark'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1153:in `default_render'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1159:in `perform_action_without_filters'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/rails.rb:76:in `process'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/rails.rb:74:in `synchronize'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/rails.rb:74:in `process'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:159:in `process_client'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:158:in `each'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:158:in `process_client'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `initialize'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `new'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `initialize'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `new'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:282:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:281:in `each'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:281:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:128:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/command.rb:212:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:281
+    C:/INSTAN~1.0-W/ruby/bin/mongrel_rails:19:in `load'
+    C:/INSTAN~1.0-W/ruby/bin/mongrel_rails:19
+
+Rendering C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-11-02 04:36:30) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmRjMzE2ODEyYmU5MGEwYTgzMzFhNWNiYjExMTU5%0AYjkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--68e18af52f7a5480b788644025a8f74df41c2e78
+  Parameters: {"action"=>"index", "controller"=>"store"}
+  [4;36;1mProduct Load (0.001000)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+ERROR: compiling _run_erb_47app47views47store47index46html46erb RAISED compile error
+C:/INSTAN~1.0-W/rails_apps/depot/app/views/store/index.html.erb:8: syntax error, unexpected ','
+_erbout.concat "    <span class=\"price\" >"; _erbout.concat(( number_to_currency(product.price, , (precision: 2)) ).to_s); _erbout.concat "</span>\n"
+                                                                                                  ^
+C:/INSTAN~1.0-W/rails_apps/depot/app/views/store/index.html.erb:8: syntax error, unexpected ')', expecting kEND
+_erbout.concat "    <span class=\"price\" >"; _erbout.concat(( number_to_currency(product.price, , (precision: 2)) ).to_s); _erbout.concat "</span>\n"
+                                                                                                                          ^
+Function body: def _run_erb_47app47views47store47index46html46erb(local_assigns)
+_erbout = ''; _erbout.concat "<h1>Your Pragmatic Catalog</h1>\n"
+ for product in @products 
+_erbout.concat "  <div class=\"entry\">\n"
+_erbout.concat "    "; _erbout.concat(( image_tag(product.image_url) ).to_s); _erbout.concat "\n"
+_erbout.concat "    <h3>"; _erbout.concat((h product.title ).to_s); _erbout.concat "</h3>\n"
+_erbout.concat "    "; _erbout.concat(( product.description ).to_s); _erbout.concat "\n"
+_erbout.concat "    \n"
+_erbout.concat "    <span class=\"price\" >"; _erbout.concat(( number_to_currency(product.price, , (precision: 2)) ).to_s); _erbout.concat "</span>\n"
+_erbout.concat "\n"
+_erbout.concat "    "; _erbout.concat(( button_to "Add to Cart" , :action => :add_to_cart, :id => product ).to_s); _erbout.concat "\n"
+_erbout.concat "    \n"
+_erbout.concat "  </div>\n"
+ end ; _erbout.concat "\n"
+_erbout
+end
+Backtrace: C:/INSTAN~1.0-W/rails_apps/depot/app/views/store/index.html.erb:15:in `compile_template'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:630:in `compile_and_render_template'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:365:in `render_template'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:316:in `render_file'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1100:in `render_for_file'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:836:in `render_with_no_layout'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/layout.rb:262:in `render_without_benchmark'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+C:/INSTAN~1.0-W/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1153:in `default_render'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1159:in `perform_action_without_filters'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+C:/INSTAN~1.0-W/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/rails.rb:76:in `process'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/rails.rb:74:in `process'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:159:in `process_client'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:158:in `each'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:158:in `process_client'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:285:in `run'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:285:in `initialize'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:285:in `new'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:285:in `run'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:268:in `initialize'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:268:in `new'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:268:in `run'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/configurator.rb:282:in `run'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/configurator.rb:281:in `each'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/configurator.rb:281:in `run'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:128:in `run'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/command.rb:212:in `run'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:281
+C:/INSTAN~1.0-W/ruby/bin/mongrel_rails:19:in `load'
+C:/INSTAN~1.0-W/ruby/bin/mongrel_rails:19
+
+
+ActionView::TemplateError (compile error
+C:/INSTAN~1.0-W/rails_apps/depot/app/views/store/index.html.erb:8: syntax error, unexpected ','
+_erbout.concat "    <span class=\"price\" >"; _erbout.concat(( number_to_currency(product.price, , (precision: 2)) ).to_s); _erbout.concat "</span>\n"
+                                                                                                  ^
+C:/INSTAN~1.0-W/rails_apps/depot/app/views/store/index.html.erb:8: syntax error, unexpected ')', expecting kEND
+_erbout.concat "    <span class=\"price\" >"; _erbout.concat(( number_to_currency(product.price, , (precision: 2)) ).to_s); _erbout.concat "</span>\n"
+                                                                                                                          ^) on line #8 of store/index.html.erb:
+5:     <h3><%=h product.title %></h3>
+6:     <%= product.description %>
+7:     
+8:     <span class="price" ><%= number_to_currency(product.price, , (precision: 2)) %></span>
+9: 
+10:     <%= button_to "Add to Cart" , :action => :add_to_cart, :id => product %>
+11:     
+
+    app/views/store/index.html.erb:15:in `compile_template'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:630:in `compile_and_render_template'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:365:in `render_template'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:316:in `render_file'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1100:in `render_for_file'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:836:in `render_with_no_layout'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/layout.rb:262:in `render_without_benchmark'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1153:in `default_render'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1159:in `perform_action_without_filters'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/rails.rb:76:in `process'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/rails.rb:74:in `synchronize'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/rails.rb:74:in `process'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:159:in `process_client'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:158:in `each'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:158:in `process_client'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `initialize'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `new'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `initialize'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `new'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:282:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:281:in `each'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:281:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:128:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/command.rb:212:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:281
+    C:/INSTAN~1.0-W/ruby/bin/mongrel_rails:19:in `load'
+    C:/INSTAN~1.0-W/ruby/bin/mongrel_rails:19
+
+Rendering C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-11-02 04:36:54) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmRjMzE2ODEyYmU5MGEwYTgzMzFhNWNiYjExMTU5%0AYjkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--68e18af52f7a5480b788644025a8f74df41c2e78
+  Parameters: {"action"=>"index", "controller"=>"store"}
+  [4;35;1mProduct Load (0.001000)[0m   [0mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+ERROR: compiling _run_erb_47app47views47store47index46html46erb RAISED compile error
+C:/INSTAN~1.0-W/rails_apps/depot/app/views/store/index.html.erb:8: odd number list for Hash
+_erbout.concat "    <span class=\"price\" >"; _erbout.concat(( number_to_currency(product.price, {precision: 2}) ).to_s); _erbout.concat "</span>\n"
+                                                                                                            ^
+C:/INSTAN~1.0-W/rails_apps/depot/app/views/store/index.html.erb:8: syntax error, unexpected ':', expecting '}'
+_erbout.concat "    <span class=\"price\" >"; _erbout.concat(( number_to_currency(product.price, {precision: 2}) ).to_s); _erbout.concat "</span>\n"
+                                                                                                            ^
+Function body: def _run_erb_47app47views47store47index46html46erb(local_assigns)
+_erbout = ''; _erbout.concat "<h1>Your Pragmatic Catalog</h1>\n"
+ for product in @products 
+_erbout.concat "  <div class=\"entry\">\n"
+_erbout.concat "    "; _erbout.concat(( image_tag(product.image_url) ).to_s); _erbout.concat "\n"
+_erbout.concat "    <h3>"; _erbout.concat((h product.title ).to_s); _erbout.concat "</h3>\n"
+_erbout.concat "    "; _erbout.concat(( product.description ).to_s); _erbout.concat "\n"
+_erbout.concat "    \n"
+_erbout.concat "    <span class=\"price\" >"; _erbout.concat(( number_to_currency(product.price, {precision: 2}) ).to_s); _erbout.concat "</span>\n"
+_erbout.concat "\n"
+_erbout.concat "    "; _erbout.concat(( button_to "Add to Cart" , :action => :add_to_cart, :id => product ).to_s); _erbout.concat "\n"
+_erbout.concat "    \n"
+_erbout.concat "  </div>\n"
+ end ; _erbout.concat "\n"
+_erbout
+end
+Backtrace: C:/INSTAN~1.0-W/rails_apps/depot/app/views/store/index.html.erb:15:in `compile_template'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:630:in `compile_and_render_template'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:365:in `render_template'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:316:in `render_file'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1100:in `render_for_file'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:836:in `render_with_no_layout'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/layout.rb:262:in `render_without_benchmark'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+C:/INSTAN~1.0-W/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1153:in `default_render'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1159:in `perform_action_without_filters'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+C:/INSTAN~1.0-W/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/rails.rb:76:in `process'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/rails.rb:74:in `process'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:159:in `process_client'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:158:in `each'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:158:in `process_client'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:285:in `run'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:285:in `initialize'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:285:in `new'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:285:in `run'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:268:in `initialize'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:268:in `new'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:268:in `run'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/configurator.rb:282:in `run'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/configurator.rb:281:in `each'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/configurator.rb:281:in `run'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:128:in `run'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/command.rb:212:in `run'
+C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:281
+C:/INSTAN~1.0-W/ruby/bin/mongrel_rails:19:in `load'
+C:/INSTAN~1.0-W/ruby/bin/mongrel_rails:19
+
+
+ActionView::TemplateError (compile error
+C:/INSTAN~1.0-W/rails_apps/depot/app/views/store/index.html.erb:8: odd number list for Hash
+_erbout.concat "    <span class=\"price\" >"; _erbout.concat(( number_to_currency(product.price, {precision: 2}) ).to_s); _erbout.concat "</span>\n"
+                                                                                                            ^
+C:/INSTAN~1.0-W/rails_apps/depot/app/views/store/index.html.erb:8: syntax error, unexpected ':', expecting '}'
+_erbout.concat "    <span class=\"price\" >"; _erbout.concat(( number_to_currency(product.price, {precision: 2}) ).to_s); _erbout.concat "</span>\n"
+                                                                                                            ^) on line #8 of store/index.html.erb:
+5:     <h3><%=h product.title %></h3>
+6:     <%= product.description %>
+7:     
+8:     <span class="price" ><%= number_to_currency(product.price, {precision: 2}) %></span>
+9: 
+10:     <%= button_to "Add to Cart" , :action => :add_to_cart, :id => product %>
+11:     
+
+    app/views/store/index.html.erb:15:in `compile_template'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:630:in `compile_and_render_template'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:365:in `render_template'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:316:in `render_file'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1100:in `render_for_file'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:836:in `render_with_no_layout'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/layout.rb:262:in `render_without_benchmark'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1153:in `default_render'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1159:in `perform_action_without_filters'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/rails.rb:76:in `process'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/rails.rb:74:in `synchronize'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/rails.rb:74:in `process'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:159:in `process_client'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:158:in `each'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:158:in `process_client'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `initialize'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `new'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `initialize'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `new'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:282:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:281:in `each'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:281:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:128:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/command.rb:212:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:281
+    C:/INSTAN~1.0-W/ruby/bin/mongrel_rails:19:in `load'
+    C:/INSTAN~1.0-W/ruby/bin/mongrel_rails:19
+
+Rendering C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-11-02 04:37:04) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmRjMzE2ODEyYmU5MGEwYTgzMzFhNWNiYjExMTU5%0AYjkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--68e18af52f7a5480b788644025a8f74df41c2e78
+  Parameters: {"action"=>"index", "controller"=>"store"}
+  [4;36;1mProduct Load (0.002000)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (0.010000)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 0.11900 (8 reqs/sec) | Rendering: 0.01400 (11%) | DB: 0.01200 (10%) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-11-02 04:38:23) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmRjMzE2ODEyYmU5MGEwYTgzMzFhNWNiYjExMTU5%0AYjkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--68e18af52f7a5480b788644025a8f74df41c2e78
+  Parameters: {"action"=>"index", "controller"=>"store"}
+  [4;36;1mProduct Load (0.002000)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (0.012000)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 0.03800 (26 reqs/sec) | Rendering: 0.01000 (26%) | DB: 0.01400 (36%) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-11-02 04:38:29) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmRjMzE2ODEyYmU5MGEwYTgzMzFhNWNiYjExMTU5%0AYjkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--68e18af52f7a5480b788644025a8f74df41c2e78
+  Parameters: {"action"=>"index", "controller"=>"store"}
+  [4;36;1mProduct Load (0.001000)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (0.010000)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 0.03300 (30 reqs/sec) | Rendering: 0.00900 (27%) | DB: 0.01100 (33%) | 200 OK [http://localhost/store]
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2010-11-02 04:38:47) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmRjMzE2ODEyYmU5MGEwYTgzMzFhNWNiYjExMTU5%0AYjkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--68e18af52f7a5480b788644025a8f74df41c2e78
+  Parameters: {"action"=>"index", "controller"=>"products"}
+  [4;36;1mProduct Load (0.002000)[0m   [0;1mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;35;1mProduct Columns (0.012000)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 0.03600 (27 reqs/sec) | Rendering: 0.00900 (25%) | DB: 0.01400 (38%) | 200 OK [http://localhost/products]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-11-02 04:47:56) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmRjMzE2ODEyYmU5MGEwYTgzMzFhNWNiYjExMTU5%0AYjkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--68e18af52f7a5480b788644025a8f74df41c2e78
+  Parameters: {"action"=>"index", "controller"=>"store"}
+  [4;36;1mProduct Load (0.002000)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (0.012000)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 0.03300 (30 reqs/sec) | Rendering: 0.00800 (24%) | DB: 0.01400 (42%) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-11-02 04:52:08) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMmRjMzE2ODEyYmU5MGEwYTgzMzFhNWNiYjExMTU5%0AYjkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--68e18af52f7a5480b788644025a8f74df41c2e78
+  Parameters: {"action"=>"index", "controller"=>"store"}
+  [4;36;1mProduct Load (0.003000)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (0.012000)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 0.03300 (30 reqs/sec) | Rendering: 0.00800 (24%) | DB: 0.01500 (45%) | 200 OK [http://localhost/store]
