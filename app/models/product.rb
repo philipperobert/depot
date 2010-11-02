@@ -4,6 +4,7 @@ class Product < ActiveRecord::Base
     find(:all, :order => "title")
   end
 
+
   # validation stuff...
 
 
