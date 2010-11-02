@@ -1,6 +1,12 @@
 class Product < ActiveRecord::Base
 
-# check validity
+  def self.find_products_for_sale
+    find(:all, :order => "title")
+  end
+
+  # validation stuff...
+
+
 validates_presence_of :title, :description, :image_url
 validates_numericality_of :price
 validate :price_must_be_at_least_a_cent

@@ -1,5 +1,10 @@
 /* Global styles */
 
+
+#store .entry form, #store .entry form div {
+	display: inline;
+}
+
 h1 {
         font:  150% sans-serif;
         color: #226;
