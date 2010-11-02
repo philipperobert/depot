@@ -1,5 +1,56 @@
 /* Global styles */
 
+
+/* Styles for the cart in the sidebar */
+
+ 
+
+#cart, #cart table {
+
+  font-size: smaller;
+
+  color:     white;
+
+}
+
+ 
+
+#cart table {
+
+  border-top:    1px dotted #595;
+
+  border-bottom: 1px dotted #595;
+
+  margin-bottom: 10px;
+
+}
+
+
+.cart-title {
+
+  font: 120% bold;
+
+}
+
+ 
+
+.item-price, .total-line {
+
+  text-align: right;
+
+}
+
+ 
+
+.total-line .total-cell {
+
+  font-weight: bold;
+
+  border-top: 1px solid #595;
+
+}
+
+
 /* START:notice */
 #notice {
   border: 2px solid red;
