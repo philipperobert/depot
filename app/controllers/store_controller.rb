@@ -3,7 +3,11 @@ class StoreController < ApplicationController
 before_filter :find_cart, :except => :empty_cart
 
 def index
-  @time = Time.now
+  @time = Time.now.to_s(:db)
+  # => "2008-03-04 12:41:44"
+  @date = Date.today.to_s(:long)
+  # => "March 4, 2008"
+  
   @products = Product.find_products_for_sale
 end
 

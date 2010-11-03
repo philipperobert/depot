@@ -6490,3 +6490,285 @@ Rendering store/index
   [4;36;1mProduct Columns (0.012000)[0m   [0;1mSHOW FIELDS FROM `products`[0m
 Rendered store/_cart (0.00200)
 Completed in 0.04100 (24 reqs/sec) | Rendering: 0.01000 (24%) | DB: 0.01400 (34%) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-11-02 22:28:04) [GET]
+  Session ID: 581cf7b0e73a14dc011adf483eb78cdf
+  Parameters: {"action"=>"index", "controller"=>"store"}
+  [4;36;1mProduct Load (0.012000)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (0.013000)[0m   [0mSHOW FIELDS FROM `products`[0m
+Rendered store/_cart (0.02000)
+Completed in 0.17800 (5 reqs/sec) | Rendering: 0.04700 (26%) | DB: 0.02500 (14%) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-11-02 22:28:08) [GET]
+  Session ID: 581cf7b0e73a14dc011adf483eb78cdf
+  Parameters: {"action"=>"index", "controller"=>"store"}
+  [4;36;1mProduct Load (0.003000)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (0.010000)[0m   [0mSHOW FIELDS FROM `products`[0m
+Rendered store/_cart (0.00100)
+Completed in 0.04000 (25 reqs/sec) | Rendering: 0.01300 (32%) | DB: 0.01300 (32%) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#empty_cart (for 127.0.0.1 at 2010-11-02 22:28:11) [POST]
+  Session ID: 581cf7b0e73a14dc011adf483eb78cdf
+  Parameters: {"authenticity_token"=>"0d33f34f29faebe74c18e5334e2617f6c97e10f9", "action"=>"empty_cart", "controller"=>"store"}
+Redirected to http://localhost:3000/store
+Completed in 0.00300 (333 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://localhost/store/empty_cart]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-11-02 22:28:11) [GET]
+  Session ID: 581cf7b0e73a14dc011adf483eb78cdf
+  Parameters: {"action"=>"index", "controller"=>"store"}
+  [4;36;1mProduct Load (0.001000)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (0.013000)[0m   [0mSHOW FIELDS FROM `products`[0m
+Rendered store/_cart (0.00100)
+Completed in 0.04500 (22 reqs/sec) | Rendering: 0.01200 (26%) | DB: 0.01400 (31%) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2010-11-02 22:28:12) [GET]
+  Session ID: 581cf7b0e73a14dc011adf483eb78cdf
+  Parameters: {"action"=>"add_to_cart", "id"=>"1", "controller"=>"store"}
+  [4;36;1mProduct Columns (0.010000)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.001000)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+Redirected to http://localhost:3000/store
+Completed in 0.03200 (31 reqs/sec) | DB: 0.01100 (34%) | 302 Found [http://localhost/store/add_to_cart/1]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-11-02 22:28:13) [GET]
+  Session ID: 581cf7b0e73a14dc011adf483eb78cdf
+  Parameters: {"action"=>"index", "controller"=>"store"}
+  [4;36;1mProduct Load (0.002000)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (0.011000)[0m   [0mSHOW FIELDS FROM `products`[0m
+Rendered store/_cart_item (0.00400)
+Rendered store/_cart (0.00400)
+Completed in 0.03300 (30 reqs/sec) | Rendering: 0.01400 (42%) | DB: 0.01300 (39%) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#empty_cart (for 127.0.0.1 at 2010-11-02 22:28:21) [POST]
+  Session ID: 581cf7b0e73a14dc011adf483eb78cdf
+  Parameters: {"authenticity_token"=>"0d33f34f29faebe74c18e5334e2617f6c97e10f9", "action"=>"empty_cart", "controller"=>"store"}
+Redirected to http://localhost:3000/store
+Completed in 0.00400 (250 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://localhost/store/empty_cart]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-11-02 22:28:22) [GET]
+  Session ID: 581cf7b0e73a14dc011adf483eb78cdf
+  Parameters: {"action"=>"index", "controller"=>"store"}
+  [4;36;1mProduct Load (0.004000)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (0.011000)[0m   [0mSHOW FIELDS FROM `products`[0m
+Rendered store/_cart (0.00100)
+Completed in 0.04300 (23 reqs/sec) | Rendering: 0.01000 (23%) | DB: 0.01500 (34%) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-11-02 22:29:36) [GET]
+  Session ID: 581cf7b0e73a14dc011adf483eb78cdf
+  Parameters: {"action"=>"index", "controller"=>"store"}
+  [4;36;1mProduct Load (0.001000)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (0.011000)[0m   [0mSHOW FIELDS FROM `products`[0m
+Rendered store/_cart (0.00100)
+Completed in 0.04000 (25 reqs/sec) | Rendering: 0.01500 (37%) | DB: 0.01200 (30%) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-11-02 22:36:07) [GET]
+  Session ID: 581cf7b0e73a14dc011adf483eb78cdf
+  Parameters: {"action"=>"index", "controller"=>"store"}
+
+
+NameError (undefined local variable or method `localtime' for #<StoreController:0x5457ab8>):
+    /app/controllers/store_controller.rb:6:in `index'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `send'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `perform_action_without_filters'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/rails.rb:76:in `process'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/rails.rb:74:in `process'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:159:in `process_client'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:158:in `each'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:158:in `process_client'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:285:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:285:in `initialize'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:285:in `new'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:285:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:268:in `initialize'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:268:in `new'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:268:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/configurator.rb:282:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/configurator.rb:281:in `each'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/configurator.rb:281:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:128:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/command.rb:212:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:281
+    C:/INSTAN~1.0-W/ruby/bin/mongrel_rails:19:in `load'
+    C:/INSTAN~1.0-W/ruby/bin/mongrel_rails:19
+
+Rendering C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-11-02 22:37:29) [GET]
+  Session ID: 581cf7b0e73a14dc011adf483eb78cdf
+  Parameters: {"action"=>"index", "controller"=>"store"}
+
+
+NoMethodError (undefined method `localtime' for "2010-11-02 22:37:29":String):
+    /app/controllers/store_controller.rb:6:in `index'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `send'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `perform_action_without_filters'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/rails.rb:76:in `process'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/rails.rb:74:in `process'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:159:in `process_client'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:158:in `each'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:158:in `process_client'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:285:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:285:in `initialize'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:285:in `new'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:285:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:268:in `initialize'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:268:in `new'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:268:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/configurator.rb:282:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/configurator.rb:281:in `each'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/configurator.rb:281:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:128:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/command.rb:212:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:281
+    C:/INSTAN~1.0-W/ruby/bin/mongrel_rails:19:in `load'
+    C:/INSTAN~1.0-W/ruby/bin/mongrel_rails:19
+
+Rendering C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-11-02 22:37:42) [GET]
+  Session ID: 581cf7b0e73a14dc011adf483eb78cdf
+  Parameters: {"action"=>"index", "controller"=>"store"}
+
+
+NoMethodError (undefined method `day' for "2010-11-02 22:37:42":String):
+    /app/controllers/store_controller.rb:6:in `index'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `send'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `perform_action_without_filters'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/rails.rb:76:in `process'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/rails.rb:74:in `process'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:159:in `process_client'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:158:in `each'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:158:in `process_client'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:285:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:285:in `initialize'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:285:in `new'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:285:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:268:in `initialize'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:268:in `new'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:268:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/configurator.rb:282:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/configurator.rb:281:in `each'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/configurator.rb:281:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:128:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/command.rb:212:in `run'
+    C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:281
+    C:/INSTAN~1.0-W/ruby/bin/mongrel_rails:19:in `load'
+    C:/INSTAN~1.0-W/ruby/bin/mongrel_rails:19
+
+Rendering C:/INSTAN~1.0-W/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-11-02 22:38:01) [GET]
+  Session ID: 581cf7b0e73a14dc011adf483eb78cdf
+  Parameters: {"action"=>"index", "controller"=>"store"}
+  [4;36;1mProduct Load (0.002000)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (0.011000)[0m   [0mSHOW FIELDS FROM `products`[0m
+Rendered store/_cart (0.00200)
+Completed in 0.04000 (24 reqs/sec) | Rendering: 0.01100 (27%) | DB: 0.01300 (32%) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-11-02 22:38:59) [GET]
+  Session ID: 581cf7b0e73a14dc011adf483eb78cdf
+  Parameters: {"action"=>"index", "controller"=>"store"}
+  [4;36;1mProduct Load (0.003000)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (0.011000)[0m   [0mSHOW FIELDS FROM `products`[0m
+Rendered store/_cart (0.00100)
+Completed in 0.04100 (24 reqs/sec) | Rendering: 0.01400 (34%) | DB: 0.01400 (34%) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-11-02 22:39:19) [GET]
+  Session ID: 581cf7b0e73a14dc011adf483eb78cdf
+  Parameters: {"action"=>"index", "controller"=>"store"}
+  [4;36;1mProduct Load (0.002000)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (0.010000)[0m   [0mSHOW FIELDS FROM `products`[0m
+Rendered store/_cart (0.00100)
+Completed in 0.03900 (25 reqs/sec) | Rendering: 0.01500 (38%) | DB: 0.01200 (30%) | 200 OK [http://localhost/store]
