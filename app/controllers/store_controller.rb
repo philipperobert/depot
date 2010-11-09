@@ -3,10 +3,27 @@ class StoreController < ApplicationController
 before_filter :find_cart, :except => :empty_cart
 
 def index
+
+  #initialize
+  @count = increment_count
+  
+
   @time = Time.now
+  @date = Date.today
   @products = Product.find_products_for_sale
+
+  @cart = find_cart
+
+  @current_item = nil
+  
 end
 
+
+
+def increment_count
+  session[:counter] ||= 0
+  session[:counter] += 1
+end
 
 # def add_to_cart
 #   @cart = find_cart
@@ -14,27 +31,32 @@ end
 #   @cart.add_product(product)
 # end
 
-  def add_to_cart
+def add_to_cart
 
+  begin
+  
     product = Product.find(params[:id])
-
-    @cart = find_cart
-
-    @cart.add_product(product)
-    
-    redirect_to_index("Added product")
 
   rescue ActiveRecord::RecordNotFound
 
     logger.error("Attempt to access invalid product #{params[:id]}")
-
     redirect_to_index("Invalid product")
 
+  else
+
+    @cart = find_cart
+
+    @current_item = @cart.add_product(product)
+    
+    respond_to { |format| format.js }
   end
+
+end
 
 
 def empty_cart
   session[:cart] = nil
+  @current_item = nil
   flash[:notice] = "Your cart is currently empty"
   redirect_to :action => :index
 end
