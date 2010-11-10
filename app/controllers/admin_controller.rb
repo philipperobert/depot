@@ -15,9 +15,13 @@ class AdminController < ApplicationController
     end
   end
 
-  def logout
-  end
 
+  def logout
+    session[:user_id] = nil
+    flash[:notice] = "Logged out"
+    redirect_to(:action => :login)
+  end
+  
   def index
     @total_orders = Order.count
   end
