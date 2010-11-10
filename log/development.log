@@ -18173,3 +18173,164 @@ Processing AdminController#index (for 127.0.0.1 at 2010-11-09 22:07:56) [GET]
   [4;35;1mSQL (0.081000)[0m   [0mSELECT count(*) AS count_all FROM `orders` [0m
 Rendering admin/index
 Completed in 0.10900 (9 reqs/sec) | Rendering: 0.00500 (4%) | DB: 0.11000 (100%) | 200 OK [http://localhost/admin]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-11-09 22:19:00) [GET]
+  Session ID: 5e0163b9f2105302bedfec51f21ec0d0
+  Parameters: {"action"=>"index", "controller"=>"store"}
+  [4;36;1mProduct Load (0.001000)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (0.010000)[0m   [0mSHOW FIELDS FROM `products`[0m
+Rendered store/_cart (0.00600)
+Completed in 0.06000 (16 reqs/sec) | Rendering: 0.03400 (56%) | DB: 0.01100 (18%) | 200 OK [http://localhost/store]
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2010-11-09 22:19:02) [POST]
+  Session ID: 5e0163b9f2105302bedfec51f21ec0d0
+  Parameters: {"commit"=>"Add to Cart", "authenticity_token"=>"d76e877a2a3b86be693e52e57f341356727c7cfb", "action"=>"add_to_cart", "id"=>"1", "controller"=>"store"}
+  [4;36;1mProduct Columns (0.009000)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.000000)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+Rendering store/add_to_cart
+Rendered store/_cart_item (0.00300)
+Rendered store/_cart (0.00500)
+Completed in 0.04400 (22 reqs/sec) | Rendering: 0.01600 (36%) | DB: 0.00900 (20%) | 200 OK [http://localhost/store/add_to_cart/1]
+
+
+Processing StoreController#checkout (for 127.0.0.1 at 2010-11-09 22:19:04) [POST]
+  Session ID: 5e0163b9f2105302bedfec51f21ec0d0
+  Parameters: {"authenticity_token"=>"d76e877a2a3b86be693e52e57f341356727c7cfb", "action"=>"checkout", "controller"=>"store"}
+  [4;36;1mOrder Columns (0.009000)[0m   [0;1mSHOW FIELDS FROM `orders`[0m
+Rendering template within layouts/store
+Rendering store/checkout
+  [4;35;1mProduct Columns (0.009000)[0m   [0mSHOW FIELDS FROM `products`[0m
+Rendered store/_cart_item (0.01300)
+Rendered store/_cart (0.01600)
+Completed in 0.04900 (20 reqs/sec) | Rendering: 0.01800 (36%) | DB: 0.01800 (36%) | 200 OK [http://localhost/store/checkout]
+
+
+Processing StoreController#empty_cart (for 127.0.0.1 at 2010-11-09 22:19:06) [POST]
+  Session ID: 5e0163b9f2105302bedfec51f21ec0d0
+  Parameters: {"authenticity_token"=>"d76e877a2a3b86be693e52e57f341356727c7cfb", "action"=>"empty_cart", "controller"=>"store"}
+Redirected to http://localhost:3000/store
+Completed in 0.00400 (250 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://localhost/store/empty_cart]
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-11-09 22:19:06) [GET]
+  Session ID: 5e0163b9f2105302bedfec51f21ec0d0
+  Parameters: {"action"=>"index", "controller"=>"store"}
+  [4;36;1mProduct Load (0.001000)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (0.008000)[0m   [0mSHOW FIELDS FROM `products`[0m
+Rendered store/_cart (0.00200)
+Completed in 0.04200 (23 reqs/sec) | Rendering: 0.01400 (33%) | DB: 0.00900 (21%) | 200 OK [http://localhost/store]
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-11-09 22:19:17) [GET]
+  Session ID: 5e0163b9f2105302bedfec51f21ec0d0
+  Parameters: {"action"=>"index", "controller"=>"admin"}
+  [4;36;1mUser Columns (0.009000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.047000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/admin/login
+Filter chain halted as [#<ActionController::Filters::ClassMethods::SymbolFilter:0x6fd9584 @filter=:authorize>] rendered_or_redirected.
+Completed in 0.09500 (10 reqs/sec) | DB: 0.05600 (58%) | 302 Found [http://localhost/admin]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-11-09 22:19:17) [GET]
+  Session ID: 5e0163b9f2105302bedfec51f21ec0d0
+  Parameters: {"action"=>"login", "controller"=>"admin"}
+Rendering admin/login
+Completed in 0.00900 (111 reqs/sec) | Rendering: 0.00500 (55%) | DB: 0.00000 (0%) | 200 OK [http://localhost/admin/login]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-11-09 22:19:28) [POST]
+  Session ID: 5e0163b9f2105302bedfec51f21ec0d0
+  Parameters: {"name"=>"dave", "commit"=>"Login", "authenticity_token"=>"d76e877a2a3b86be693e52e57f341356727c7cfb", "action"=>"login", "controller"=>"admin", "password"=>"password"}
+  [4;36;1mUser Columns (0.010000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.001000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`name` = 'dave') LIMIT 1[0m
+Redirected to http://localhost:3000/admin
+Completed in 0.03800 (26 reqs/sec) | DB: 0.01100 (28%) | 302 Found [http://localhost/admin/login]
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-11-09 22:19:28) [GET]
+  Session ID: 5e0163b9f2105302bedfec51f21ec0d0
+  Parameters: {"action"=>"index", "controller"=>"admin"}
+  [4;36;1mUser Columns (0.009000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.001000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mOrder Columns (0.010000)[0m   [0;1mSHOW FIELDS FROM `orders`[0m
+  [4;35;1mSQL (0.001000)[0m   [0mSELECT count(*) AS count_all FROM `orders` [0m
+Rendering admin/index
+Completed in 0.13900 (7 reqs/sec) | Rendering: 0.00300 (2%) | DB: 0.02100 (15%) | 200 OK [http://localhost/admin]
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-11-09 22:27:45) [GET]
+  Session ID: 5e0163b9f2105302bedfec51f21ec0d0
+  Parameters: {"action"=>"index", "controller"=>"admin"}
+  [4;36;1mUser Columns (0.009000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mOrder Columns (0.010000)[0m   [0;1mSHOW FIELDS FROM `orders`[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT count(*) AS count_all FROM `orders` [0m
+Rendering admin/index
+Completed in 0.05800 (17 reqs/sec) | Rendering: 0.00300 (5%) | DB: 0.01900 (32%) | 200 OK [http://localhost/admin]
+  [4;36;1mSQL (0.000000)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.033000)[0m   [0;1mDELETE FROM sessions[0m
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-11-09 22:30:09) [GET]
+  Session ID: 6eb4d65f66b4376917675456c4a635c2
+  Parameters: {"action"=>"index", "controller"=>"admin"}
+  [4;36;1mUser Columns (0.011000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/admin/login
+Filter chain halted as [#<ActionController::Filters::ClassMethods::SymbolFilter:0x704dec0 @filter=:authorize>] rendered_or_redirected.
+Completed in 0.04500 (22 reqs/sec) | DB: 0.01100 (24%) | 302 Found [http://localhost/ADMIN]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-11-09 22:30:09) [GET]
+  Session ID: 6eb4d65f66b4376917675456c4a635c2
+  Parameters: {"action"=>"login", "controller"=>"admin"}
+Rendering admin/login
+Completed in 0.00800 (125 reqs/sec) | Rendering: 0.00500 (62%) | DB: 0.00000 (0%) | 200 OK [http://localhost/admin/login]
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-11-09 22:30:11) [GET]
+  Session ID: 6eb4d65f66b4376917675456c4a635c2
+  Parameters: {"action"=>"index", "controller"=>"admin"}
+  [4;36;1mUser Columns (0.013000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.001000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/admin/login
+Filter chain halted as [#<ActionController::Filters::ClassMethods::SymbolFilter:0x6f8d24c @filter=:authorize>] rendered_or_redirected.
+Completed in 0.04500 (22 reqs/sec) | DB: 0.01400 (31%) | 302 Found [http://localhost/admin]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-11-09 22:30:11) [GET]
+  Session ID: 6eb4d65f66b4376917675456c4a635c2
+  Parameters: {"action"=>"login", "controller"=>"admin"}
+Rendering admin/login
+Completed in 0.00600 (166 reqs/sec) | Rendering: 0.00300 (50%) | DB: 0.00000 (0%) | 200 OK [http://localhost/admin/login]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-11-09 22:33:17) [GET]
+  Session ID: 6eb4d65f66b4376917675456c4a635c2
+  Parameters: {"action"=>"login", "controller"=>"admin"}
+Rendering admin/login
+Completed in 0.00500 (199 reqs/sec) | Rendering: 0.00200 (40%) | DB: 0.00000 (0%) | 200 OK [http://localhost/admin/login]
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-11-09 22:33:37) [GET]
+  Session ID: a947f6b99dcf091dfbf716f90176800c
+  Parameters: {"action"=>"index", "controller"=>"admin"}
+  [4;36;1mUser Columns (0.008000)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/admin/login
+Filter chain halted as [#<ActionController::Filters::ClassMethods::SymbolFilter:0x6eb9334 @filter=:authorize>] rendered_or_redirected.
+Completed in 0.12000 (8 reqs/sec) | DB: 0.00800 (6%) | 302 Found [http://localhost/admin]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-11-09 22:33:37) [GET]
+  Session ID: a947f6b99dcf091dfbf716f90176800c
+  Parameters: {"action"=>"login", "controller"=>"admin"}
+Rendering admin/login
+Completed in 0.00700 (142 reqs/sec) | Rendering: 0.00300 (42%) | DB: 0.00000 (0%) | 200 OK [http://localhost/admin/login]
