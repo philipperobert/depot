@@ -1,64 +1,63 @@
 class StoreController < ApplicationController
 
 before_filter :find_cart, :except => :empty_cart
+layout "store" , :except => [ :rss, :atom ]
 
-def index
+  def index
 
-  #initialize
-  @count = increment_count
-  
+    #initialize
+    @count = increment_count
 
-  @time = Time.now
-  @date = Date.today
-  @products = Product.find_products_for_sale
-
-  @cart = find_cart
-
-  @current_item = nil
-  
-end
-
-
-def increment_count
-  session[:counter] ||= 0
-  session[:counter] += 1
-end
-
-
-def add_to_cart
-
-  begin
-  
-    product = Product.find(params[:id])
-
-  rescue ActiveRecord::RecordNotFound
-
-    logger.error("Attempt to access invalid product #{params[:id]}")
-    redirect_to_index("Invalid product")
-
-  else
+    @time = Time.now
+    @date = Date.today
+    @products = Product.find_products_for_sale
 
     @cart = find_cart
 
-    @current_item = @cart.add_product(product)
-    
-    if request.xhr?
-        respond_to { |format| format.js }
+    @current_item = nil
+  end
+
+
+  def increment_count
+    session[:counter] ||= 0
+    session[:counter] += 1
+  end
+
+
+  def add_to_cart
+
+    begin
+  
+      product = Product.find(params[:id])
+
+    rescue ActiveRecord::RecordNotFound
+
+      logger.error("Attempt to access invalid product #{params[:id]}")
+      redirect_to_index("Invalid product")
+
     else
+
+      @cart = find_cart
+
+      @current_item = @cart.add_product(product)
+    
+      if request.xhr?
+        respond_to { |format| format.js }
+      else
         redirect_to_index
+      end
     end
   end
-end
 
 
-def empty_cart
-  session[:cart] = nil
-  @current_item = nil
-  redirect_to_index
-end
+  def empty_cart
+    session[:cart] = nil
+    @current_item = nil
+    redirect_to_index unless request.xhr?
+  end
 
 
-def checkout
+  def checkout
     @cart = find_cart
     if @cart.items.empty?
       redirect_to_index("Your cart is empty")
@@ -86,14 +85,14 @@ def checkout
 private
 
 
-def find_cart
-  @cart = (session[:cart] ||= Cart.new)
-end
+  def find_cart
+    @cart = ( session[:cart] ||= Cart.new )
+  end
 
-def redirect_to_index(msg = nil)
+  def redirect_to_index(msg = nil)
     flash[:notice] = msg if msg
     redirect_to :action => :index
-end
+  end
 
 
 protected
@@ -101,7 +100,5 @@ protected
 
   def authorize
   end
-
-
 
 end

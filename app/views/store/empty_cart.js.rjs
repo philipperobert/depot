@@ -1,0 +1,2 @@
+page[:cart].replace_html :partial => ‘cart’, :object => @cart
+page[:cart].visual_effect :blind_up if @cart.items.empty?

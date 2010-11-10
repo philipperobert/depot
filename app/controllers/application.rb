@@ -4,7 +4,7 @@
 class ApplicationController < ActionController::Base
   
   before_filter :authorize, :except => :login
-  layout "store"
+  layout "store" , :except => [ :rss, :atom ]
 
   session :session_key => '_depot_session_id'
 
