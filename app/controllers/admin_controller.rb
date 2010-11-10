@@ -6,14 +6,20 @@ class AdminController < ApplicationController
       user = User.authenticate(params[:name], params[:password])
       if user
         session[:user_id] = user.id
-        redirect_to(:action => "index")
+        uri = session[:original_uri]
+        session[:original_uri] = nil
+        redirect_to(uri || { :action => "index" })
       else
         flash[:notice] = "Invalid user/password combination"
       end
     end
   end
 
-  def index
-    @total_orders = Order.count    
+  def logout
   end
+
+  def index
+    @total_orders = Order.count
+  end
+
 end
