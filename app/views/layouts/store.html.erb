@@ -30,14 +30,12 @@
     <div id="side">
     
       <!-- START_HIGHLIGHT -->
-      <div id="cart"
-            <% if @cart.items.empty? %>
-              style="display: none" 
-            <% end %> 
-        >
+      <div id="cart">
       
-        <%= render :partial => "cart", :object => @cart %>
-        
+            <% hidden_div_if @cart.items.empty?, :id => "cart" do %>
+                <%= render :partial => "cart", :object => @cart %>
+            <% end %>
+            
       </div>
       <!-- END_HIGHLIGHT -->
 
