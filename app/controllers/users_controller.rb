@@ -46,42 +46,19 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        flash[:notice] = 'User #{@user.name} was successfully created.'
-        format.html { redirect_to(:action => :index) }
-        format.xml  { render :xml => @user, :status => :created, :location => @user }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
-      end
-    end
-
-
-
-
-      if @user.save
-
         format.html { redirect_to(users_url,
-
                     :notice => "User #{@user.name} was successfully created.") }
-
         format.xml  { render :xml => @user, :status => :created,
-
                              :location => @user }
 
       else
-
         format.html { render :action => "new" }
-
         format.xml  { render :xml => @user.errors,
-
                              :status => :unprocessable_entity }
-
       end
-      
-
-
-end
-
+    end
+  end
+  
   # PUT /users/1
   # PUT /users/1.xml
   def update
@@ -90,7 +67,7 @@ end
     respond_to do |format|
       if @user.update_attributes(params[:user])
         format.html { redirect_to( users_url,
-        :notice => 'User #{@user.name} was successfully updated.')}
+              :notice => 'User #{@user.name} was successfully updated.')}
         format.html { redirect_to(:action => :index) }
         format.xml  { head :ok }
       else
