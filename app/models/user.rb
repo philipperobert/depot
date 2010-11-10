@@ -34,6 +34,23 @@ def password=(pwd)
   self.hashed_password = User.encrypted_password(self.password, self.salt)
 end
 
+
+  after_destroy :ensure_an_admin_remains
+
+  def ensure_an_admin_remains
+
+    if User.count.zero?
+
+      raise "Can't delete last user"
+
+    end
+
+  end     
+
+ 
+
+
+
 private
 
 
