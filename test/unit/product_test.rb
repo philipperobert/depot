@@ -101,6 +101,14 @@ end
     assert_equal "has already been taken", product.errors.on(:title)
   end
   
-
+  def test_unique_title1
+    product = Product.new(:title => products(:ruby_book).title,
+      :description => "yyy" ,
+      :price => 1,
+      :image_url => "fred.gif" )
+    assert !product.save
+    assert_equal ActiveRecord::Errors.default_error_messages[:taken],
+    product.errors.on(:title)
+  end
 
 end
